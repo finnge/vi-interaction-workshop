@@ -19,3 +19,10 @@ flowchart LR
 
   h2 --> Schluss
 ```
+
+## Aufgabe 1
+
+> Wissen für die Aufgabe gibt es `wissen/transition/README.md` und `wissen/update/README.md`
+
+1. Aufgaben HTML in Live-Server öffnen (-> <http://localhost:5500/handson/aufg1/index.html>)
+2. tbd
