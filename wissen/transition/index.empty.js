@@ -32,8 +32,6 @@
     });
 })();
 
-// TODO: https://github.com/d3/d3-transition/tree/v3.0.1#control-flow
-
 /**
  * Ex3. Duration
  */
