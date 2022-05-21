@@ -1,6 +1,6 @@
 # D3-Workshop: Updates, Transition and Motion
 
-im Modul "Visualisierung" im Medieninformatik Master and der TH Köln.
+im Modul "Visualisierung" im Medieninformatik Master an der TH Köln.
 
 Bei Fragen gerne melden bei:
 
@@ -20,6 +20,9 @@ flowchart LR
 
 ## Aufgabe
 
-> Wissen für die Aufgabe gibt es `wissen/transition/README.md` und `wissen/update/README.md`
+> Wissen für die Aufgabe gibt es in `wissen/transition/README.md` und `wissen/update/README.md`
 
-1. Aufgaben HTML in Live-Server öffnen (-> <http://localhost:5500/handson/aufg1/index.html>)
+1. Repository klonen
+2. Lokalen Pfad zur Aufgaben-HTML im Browser öffnen (-> file:///*"euer Pfad"*/vi-interaction-workshop/handson/aufg1/index.html)
+    - *ein lokaler Webserver wird nicht benötigt, da keine lokale Datei mit dem Datenset eingelesen wird*
+3. Bearbeiten der Aufgabe in einer beliebigen IDE
