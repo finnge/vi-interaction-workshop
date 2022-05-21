@@ -11,18 +11,15 @@ Bei Fragen gerne melden bei:
 
 ```mermaid
 flowchart LR
-  Input --> h1["Aufgabe 1"] --> sync1["Sync+Input"] --> h2["Aufgabe 2"]
+  Input --> h1["Aufgabe 1"] --> sync1["Sync+Input"]
 
   h1 -- 20min --> h1
 
-  h2 -- 20min --> h2
-
-  h2 --> Schluss
+  sync1 --> Schluss
 ```
 
-## Aufgabe 1
+## Aufgabe
 
 > Wissen für die Aufgabe gibt es `wissen/transition/README.md` und `wissen/update/README.md`
 
 1. Aufgaben HTML in Live-Server öffnen (-> <http://localhost:5500/handson/aufg1/index.html>)
-2. tbd
