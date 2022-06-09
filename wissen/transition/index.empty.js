@@ -138,18 +138,24 @@
     .on('click', () => {
       // Rect 0
       rects[0]
-        .transition();
-      // ...
+        .transition()
+        // ...
+        .attr('x', 350)
+        .attr('fill', '#0f62fe');
 
       // Rect 1
       rects[1]
-        .transition();
-      // ...
+        .transition()
+        // ...
+        .attr('x', 350)
+        .attr('fill', '#0f62fe');
 
       // Rect 2
       rects[2]
-        .transition();
-      // ...
+        .transition()
+        // ...
+        .attr('x', 350)
+        .attr('fill', '#0f62fe');
     });
 })();
 
@@ -227,18 +233,27 @@
     .on('click', () => {
       // Rect 0
       rects[0]
-        .transition();
-      // ...
+        .transition()
+        // ...
+        .duration(1000)
+        .attr('x', 350)
+        .attr('fill', '#0f62fe');
 
       // Rect 1
       rects[1]
-        .transition();
-      // ...
+        .transition()
+        // ...
+        .duration(1000)
+        .attr('x', 350)
+        .attr('fill', '#0f62fe');
 
       // Rect 2
       rects[2]
-        .transition();
-      // ...
+        .transition()
+        // ...
+        .duration(1000)
+        .attr('x', 350)
+        .attr('fill', '#0f62fe');
     });
 })();
 
