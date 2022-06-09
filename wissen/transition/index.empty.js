@@ -4,8 +4,10 @@
  * Ex1. Event Listener
  */
 (() => {
-  d3.select("#ex1 button[data-js='execute']");
-  // ...
+  d3.select("#ex1 button[data-js='execute']")
+    .on('click', () => {
+      console.log('test');
+    });
 })();
 
 
@@ -59,8 +61,18 @@
 
   d3.select("#ex2 button[data-js='execute']")
     .on('click', () => {
-      svg.selectAll('rect');
-      // ...
+      svg.selectAll('rect')
+        .transition()
+        .on('start', function start() {
+          d3.select(this)
+            .attr('fill', '#0f62fe');
+        })
+        .attr('x', 300)
+        .attr('y', 50)
+        .on('end', function end() {
+          d3.select(this)
+            .attr('fill', '#161616');
+        });
     });
 })();
 
@@ -139,21 +151,21 @@
       // Rect 0
       rects[0]
         .transition()
-        // ...
+        .duration(1000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
 
       // Rect 1
       rects[1]
         .transition()
-        // ...
+        .duration(1500)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
 
       // Rect 2
       rects[2]
         .transition()
-        // ...
+        .duration(3000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
     });
@@ -234,7 +246,7 @@
       // Rect 0
       rects[0]
         .transition()
-        // ...
+        .delay(500)
         .duration(1000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
@@ -242,7 +254,7 @@
       // Rect 1
       rects[1]
         .transition()
-        // ...
+        .delay(1000)
         .duration(1000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
@@ -250,7 +262,7 @@
       // Rect 2
       rects[2]
         .transition()
-        // ...
+        .delay(1500)
         .duration(1000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
@@ -333,7 +345,7 @@
       rects[0]
         .transition()
         .delay(0)
-        // ...
+        .ease(d3.easeLinear)
         .duration(1000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
@@ -342,7 +354,7 @@
       rects[1]
         .transition()
         .delay(1000)
-        // ...
+        .ease(d3.easeExp)
         .duration(1000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
@@ -351,7 +363,7 @@
       rects[2]
         .transition()
         .delay(2000)
-        // ...
+        .ease(d3.easeBounce)
         .duration(1000)
         .attr('x', 350)
         .attr('fill', '#0f62fe');
