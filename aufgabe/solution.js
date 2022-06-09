@@ -40,46 +40,46 @@
 
   // Create SVG element
   const svg = d3
-    .select("#chart")
-    .append("svg")
-    .attr("width", WIDTH)
-    .attr("height", HEIGHT);
+    .select('#chart')
+    .append('svg')
+    .attr('width', WIDTH)
+    .attr('height', HEIGHT);
 
   // Define clipping path
   svg
-    .append("clipPath")
-    .attr("id", "chart-area")
-    .append("rect")
-    .attr("x", PADDING)
-    .attr("y", PADDING)
-    .attr("width", WIDTH - PADDING * 3)
-    .attr("height", HEIGHT - PADDING * 2);
+    .append('clipPath')
+    .attr('id', 'chart-area')
+    .append('rect')
+    .attr('x', PADDING)
+    .attr('y', PADDING)
+    .attr('width', WIDTH - PADDING * 3)
+    .attr('height', HEIGHT - PADDING * 2);
 
   // Create circles
   svg
-    .append("g")
-    .attr("id", "circles")
-    .attr("clip-path", "url(#chart-area)")
-    .selectAll("circle")
+    .append('g')
+    .attr('id', 'circles')
+    .attr('clip-path', 'url(#chart-area)')
+    .selectAll('circle')
     .data(DATASET)
     .enter()
-    .append("circle")
-    .attr("cx", (d) => xScale(d[0]))
-    .attr("cy", (d) => yScale(d[1]))
-    .attr("r", 2);
+    .append('circle')
+    .attr('cx', (d) => xScale(d[0]))
+    .attr('cy', (d) => yScale(d[1]))
+    .attr('r', 2);
 
   // Create X axis
   svg
-    .append("g")
-    .attr("class", "x axis")
-    .attr("transform", `translate(0,${HEIGHT - PADDING})`)
+    .append('g')
+    .attr('class', 'x axis')
+    .attr('transform', `translate(0,${HEIGHT - PADDING})`)
     .call(xAxis);
 
   // Create Y axis
   svg
-    .append("g")
-    .attr("class", "y axis")
-    .attr("transform", `translate(${PADDING},0)`)
+    .append('g')
+    .attr('class', 'y axis')
+    .attr('transform', `translate(${PADDING},0)`)
     .call(yAxis);
 
   /**
@@ -95,40 +95,40 @@
    */
 
   function updateChart() {
-    console.log("Updating the chart!");
+    console.log('Updating the chart!');
 
-    //1. Update scale domains
+    // 1. Update scale domains
     xScale.domain([0, d3.max(DATASET, (d) => d[0])]);
     yScale.domain([0, d3.max(DATASET, (d) => d[1])]);
 
-    //2. Update all circles
+    // 2. Update all circles
     svg
-      .selectAll("circle")
+      .selectAll('circle')
       .data(DATASET)
       .transition()
       .duration(1000)
-      .on("start", function () {
-        d3.select(this).attr("fill", "magenta").attr("r", 7);
+      .on('start', function start() {
+        d3.select(this).attr('fill', 'magenta').attr('r', 7);
       })
-      .attr("cx", (d) => xScale(d[0]))
-      .attr("cy", (d) => yScale(d[1]))
-      .on("end", function () {
+      .attr('cx', (d) => xScale(d[0]))
+      .attr('cy', (d) => yScale(d[1]))
+      .on('end', function end() {
         d3.select(this)
           .transition()
           .duration(1000)
-          .attr("fill", "black")
-          .attr("r", 2);
+          .attr('fill', 'black')
+          .attr('r', 2);
       });
 
-    //3. Update xAxis
-    svg.select(".x.axis").transition().duration(1000).call(xAxis);
+    // 3. Update xAxis
+    svg.select('.x.axis').transition().duration(1000).call(xAxis);
 
-    //4. Update yAxis
-    svg.select(".y.axis").transition().duration(1000).call(yAxis);
+    // 4. Update yAxis
+    svg.select('.y.axis').transition().duration(1000).call(yAxis);
   }
 
   // On click, add new data values
-  d3.select("#randomize").on("click", () => {
+  d3.select('#randomize').on('click', () => {
     DATASET = createDataset(DATASET.length);
 
     updateChart();
